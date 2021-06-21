@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="estilos.css" .css“ rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e15e8c34af.js" crossorigin="anonymous"></script>
+
+</head>
+<header id="cabecera"></header>
+<script src="header.js"></script>
+
+<body>
+    <div class="container">
+        <div class="limpiarEstilos">
+            <div class="col-lg-12" align="center">
+                <h1>Completa el siguiente formulario</h1>
+                <form>
+                    <div class="form-group col-md-6">
+                        <label>Nombre y Apellido</label> <br>
+                        <input type="text" placeholder="Escriba su nombre y apellido" class="form-control" id="nombre">
+                    </div>
+                    <br>
+                    <div class="form-group col-md-6">
+                        <label>Numero de Telefono</label>
+                        <input type="number" placeholder="Escriba su numero de telefono" class="form-control"
+                            id="telefono">
+                    </div>
+                    <br>
+                    <div class="form-group col-md-6">
+                        <label>Email</label>
+                        <input type="email" placeholder="Escriba su mail" class="form-control" id="mail">
+                    </div>
+                    <br>
+                    <div class="form-group col-md-6">
+                        <label>Escribenos tu consulta</label>
+                        <textarea rows="3" class="form-control" placeholder="Escriba su consulta"
+                            id="consulta"></textarea>
+                    </div>
+                    <br>
+                    <div class="form-group col-md-6">
+                        <input type="button" value="Guardar" onclick="return validar();">
+                    </div>
+                    <br>
+                    <br>
+
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+    <footer class="pie" id="piepagina"></footer>
+    <script src="footer.js"></script>
+
+</body>
+
+</html>
+
+<script>
+    function validar() {
+        let nombre = document.getElementById("nombre");
+        let telefono = document.getElementById("telefono");
+        let email = document.getElementById("mail");
+        let consulta = document.getElementById("consulta");
+
+        if (nombre.value === "") {
+            alert("Corrija los campos");
+            nombre.style.borderColor = 'red';
+            return false;
+        } else if (telefono.value === "") {
+            alert("Agregue su telefono");
+            telefono.style.borderColor = 'red';
+            return false;
+        } else if (email.value === "") {
+            alert("Corrija los campos");
+            email.style.borderColor = 'red';
+            return false;
+        } else if (consulta.value === "") {
+            alert("Corrija los campos");
+            consulta.style.borderColor = 'red';
+            return false;
+        }
+        return alert("Muchas gracias por su consulta, se le envio un mail a: " + email.value);
+    }
+ 
+
+</script>
